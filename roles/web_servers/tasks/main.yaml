@@ -1,0 +1,11 @@
+- name: install apache
+  package: 
+    name: "{{ apache_package }}"
+    state: latest
+
+- name: start and enable apache
+  service: 
+    name: "{{ apache_package }}"
+    state: started
+    enabled: yes
+      

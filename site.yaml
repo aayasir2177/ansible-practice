@@ -1,0 +1,33 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: install updates \RedHat Family\
+    dnf:
+      name: "*"
+      state: latest
+    changed_when: false
+    when: ansible_facts['os_family'] == 'RedHat'
+
+  - name: install updates \Debian Family\
+    apt:
+      update_cache: yes
+    changed_when: false
+    when: ansible_facts['os_family'] == 'Debian'
+  
+- hosts: all
+  become: true
+  roles:
+    - base
+
+- hosts: web_servers
+  become: true
+  roles: 
+    - web_servers
+
+- hosts: file_servers
+  become: true
+  roles:
+    - file_servers

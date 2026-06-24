@@ -1,0 +1,9 @@
+- name: install base packges \curl, git, tmux, htop\
+  package:
+    name:
+      - curl
+      - git
+      - tmux
+      - htop
+    state: latest
+
