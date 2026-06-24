@@ -1,6 +1,8 @@
 # Ansible Practice
 
-This repo contains my ansible practice playbook created while learning Ansible from Learn Linux TV.
+This repo contains my ansible practice playbook created while learning Ansible from Learn Linux TV. 
+
+I used KVM to create VMs and automated them using ansible. 
 
 ## Topics Covered
 
